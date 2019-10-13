@@ -57,5 +57,5 @@ fi
 # Log tail
 if test -f "$LOG_PATH"; then
 echo "---"
-echo "$(tail $LOG_PATH)"
+echo "$(tail -n 3 $LOG_PATH)"
 fi
