@@ -14,8 +14,6 @@
 bin/build
 ```
 
-Creates a `dist/Alpaca.app`.
-
 [1]: https://github.com/matryer/bitbar
 [2]: https://github.com/samuong/alpaca
 [3]: https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html
