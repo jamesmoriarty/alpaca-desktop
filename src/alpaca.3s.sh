@@ -30,9 +30,9 @@ cat << EOF > $PLIST_PATH
 EOF
 
 isRunning() {
-  PID=$(launchctl list | grep $1 | cut -f 1)
+  pid=$(launchctl list | grep $1 | cut -f 1)
 
-  if [ $PID != "-" ] && [ "$PID" -gt 0 ]; then
+  if [ $pid != "-" ] && [ "$pid" -gt 0 ]; then
     return 0
   else
     return 1
