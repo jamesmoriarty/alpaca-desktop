@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cp -r \
+    src/BitBarDistro.app \
+    dist/Alpaca.app
+
+bin/bitbar-bundler \
+    dist/Alpaca.app \
+    src/lib \
+    src/alpaca.3s.sh
