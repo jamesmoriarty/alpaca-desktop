@@ -5,10 +5,10 @@ set -u
 # set -x
 
 PLIST_NAME=com.github.alpaca
-PLIST_PATH=$(echo ~/Library/LaunchAgents/$PLIST_NAME.plist)
+PLIST_PATH=~/Library/LaunchAgents/$PLIST_NAME.plist
 DIR_PATH="$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)"
-BIN_PATH=$(echo $DIR_PATH/lib/alpaca)
-LOG_PATH=$(echo ~/.alpaca.log)
+BIN_PATH=$DIR_PATH/lib/alpaca
+LOG_PATH=~/.alpaca.log
 
 cat << EOF > $PLIST_PATH
 <?xml version="1.0" encoding="UTF-8"?>
@@ -32,7 +32,7 @@ EOF
 isRunning() {
   pid=$(launchctl list | grep $1 | cut -f 1)
 
-  if [ $pid != "-" ] && [ "$pid" -gt 0 ]; then
+  if [ $pid != "-" ] && [ $pid -gt 0 ]; then
     return 0
   else
     return 1
@@ -55,7 +55,7 @@ else
 fi
 
 # Log tail
-if test -f "$LOG_PATH"; then
+if test -f $LOG_PATH; then
 echo "---"
-echo "$(tail -n 3 $LOG_PATH)"
+tail -n 3 $LOG_PATH
 fi
