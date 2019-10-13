@@ -57,6 +57,7 @@ if isRunning $PLIST_NAME; then
   echo "Stop | bash=\"launchctl stop $PLIST_NAME\" refresh=true"
 else
   install
+
   echo " ● | color=red templateImage=$ICON"
   echo "---"
   echo "Start | bash=\"launchctl start $PLIST_NAME\" refresh=true"

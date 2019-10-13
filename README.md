@@ -2,7 +2,7 @@
 
 OSX menu bar widget for [Alpaca][2]. Built with [BitBar][1] distribution and includes [Alpaca][2] and [launchd][3] daemon.
 
-![Screenshot](docs/screenshot.png)
+![Screenshot](docs/screenshot.jpg)
 
 ## Install
 
