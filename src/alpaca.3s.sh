@@ -37,7 +37,7 @@ EOF
 isRunning() {
   pid=$(launchctl list | grep $1 | cut -f 1)
 
-  if [ $pid != "-" ] && [ $pid -gt 0 ]; then
+  if [ $pid != "" ] && [ $pid != "-" ] && [ $pid -gt 0 ]; then
     return 0
   else
     return 1
