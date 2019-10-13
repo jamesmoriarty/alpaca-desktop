@@ -4,7 +4,7 @@ set -e
 set -x
 set -u
 
-rm -r \
+rm -r -f \
     dist/Alpaca.app
 
 cp -r \
