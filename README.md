@@ -6,13 +6,18 @@
 
 ## Install
 
-`Alpaca.app` can be downloaded from [here][4].
+```
+Alpaca.app
+```
+Releases can be downloaded from [here][4].
 
 ## Build
 
 ```
 bin/build
 ```
+Build artifact can be found in `dist/Alpaca.app`.
+
 
 [1]: https://github.com/matryer/bitbar
 [2]: https://github.com/samuong/alpaca
