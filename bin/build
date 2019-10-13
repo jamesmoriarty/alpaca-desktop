@@ -1,5 +1,8 @@
 #!/bin/sh
 
+rm -r \
+    dist/Alpaca.app
+
 cp -r \
     src/BitBarDistro.app \
     dist/Alpaca.app
