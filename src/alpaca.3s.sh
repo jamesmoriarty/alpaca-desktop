@@ -60,6 +60,6 @@ fi
 
 # Log tail
 if test -f $LOG_PATH; then
-echo "---"
-tail -n 3 $LOG_PATH
+  echo "---"
+  tail -n 3 $LOG_PATH
 fi
