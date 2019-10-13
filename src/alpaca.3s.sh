@@ -38,11 +38,17 @@ fi
 
 echo "🦙"
 echo "---"
+
+# Daemon control
 if [ $PID != "-" ] && [ "$PID" -gt 0 ]; then
   echo "Running | bash=\"launchctl list $PLIST_NAME\""
   echo "Stop | bash=\"launchctl stop $PLIST_NAME\" refresh=true"
-  echo "---"
-  echo "$(tail $LOG_PATH)"
 else
   echo "Start | bash=\"launchctl start $PLIST_NAME\" refresh=true"
+fi
+
+# Log tail
+if test -f "$LOG_PATH"; then
+echo "---"
+echo "$(tail $LOG_PATH)"
 fi

@@ -1,5 +1,9 @@
 #!/bin/sh
 
+set -e
+set -x
+set -u
+
 rm -r \
     dist/Alpaca.app
 

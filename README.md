@@ -4,6 +4,16 @@
 
 ![Screenshot](docs/screenshot.png)
 
+## Install
+
+```
+curl \
+    --silent \
+    --location https://github.com/jamesmoriarty/alpaca-desktop/releases/download/v0.0.1/Alpaca-v0.0.1.zip \
+    -o Alpaca-v0.0.1.zip && \
+unzip Alpaca-v0.0.1
+```
+
 ## Build
 
 ```
