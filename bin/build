@@ -4,8 +4,10 @@ set -e
 set -x
 set -u
 
+mkdir -p dist
+
 rm -r -f \
-    dist/Alpaca.app
+    dist/*
 
 cp -r \
     src/BitBarDistro.app \
