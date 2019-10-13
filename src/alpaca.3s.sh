@@ -29,21 +29,28 @@ cat << EOF > $PLIST_PATH
 </plist>
 EOF
 
-PID=$(launchctl list | grep $PLIST_NAME | cut -f 1)
+isRunning() {
+  PID=$(launchctl list | grep $1 | cut -f 1)
 
-if [ -z $PID ]; then
-  launchctl unload $PLIST_PATH
-  launchctl load $PLIST_PATH
-fi
-
-echo "🦙"
-echo "---"
+  if [ $PID != "-" ] && [ "$PID" -gt 0 ]; then
+    return 0
+  else
+    return 1
+  fi
+}
 
 # Daemon control
-if [ $PID != "-" ] && [ "$PID" -gt 0 ]; then
+if isRunning $PLIST_NAME; then
+  echo "🦙● | color=green"
+  echo "---"
   echo "Running | bash=\"launchctl list $PLIST_NAME\""
   echo "Stop | bash=\"launchctl stop $PLIST_NAME\" refresh=true"
 else
+  launchctl unload $PLIST_PATH
+  launchctl load $PLIST_PATH
+
+  echo "🦙● | color=red"
+  echo "---"
   echo "Start | bash=\"launchctl start $PLIST_NAME\" refresh=true"
 fi
 
