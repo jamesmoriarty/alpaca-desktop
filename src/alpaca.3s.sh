@@ -10,6 +10,7 @@ DIR_PATH="$(cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)"
 BIN_PATH=$DIR_PATH/lib/alpaca
 LOG_PATH=~/.alpaca.log
 
+install() {
 cat << EOF > $PLIST_PATH
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -29,6 +30,10 @@ cat << EOF > $PLIST_PATH
 </plist>
 EOF
 
+  launchctl unload $PLIST_PATH
+  launchctl load $PLIST_PATH
+}
+
 isRunning() {
   pid=$(launchctl list | grep $1 | cut -f 1)
 
@@ -46,8 +51,7 @@ if isRunning $PLIST_NAME; then
   echo "Running | bash=\"launchctl list $PLIST_NAME\""
   echo "Stop | bash=\"launchctl stop $PLIST_NAME\" refresh=true"
 else
-  launchctl unload $PLIST_PATH
-  launchctl load $PLIST_PATH
+  install
 
   echo "🦙● | color=red"
   echo "---"
