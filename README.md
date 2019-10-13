@@ -1,6 +1,6 @@
 # Alpaca Desktop
 
-[BitBar][1] distribution including [Alpaca][2] and [launchd][3] daemon and [BitBar][1] plugin.
+OSX menu bar widget for [Alpaca][2]. Built with [BitBar][1] distribution and includes [Alpaca][2] and [launchd][3] daemon.
 
 ![Screenshot](docs/screenshot.png)
 
@@ -16,8 +16,7 @@ Releases can be downloaded from [here][4].
 ```
 bin/build
 ```
-Build artifact can be found in `dist/Alpaca.app`.
-
+Build artifact can be found at `dist/Alpaca.app`.
 
 [1]: https://github.com/matryer/bitbar
 [2]: https://github.com/samuong/alpaca
