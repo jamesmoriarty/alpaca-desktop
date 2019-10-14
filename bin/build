@@ -23,6 +23,10 @@ mv \
   dist/BitBarDistro.app \
   dist/Alpaca.app
 
+cp \
+  src/icons/AppIcon.icns \
+  dist/Alpaca.app/Contents/Resources/AppIcon.icns
+
 bin/bitbar-bundler \
   dist/Alpaca.app \
   src/lib \
