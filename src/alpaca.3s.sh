@@ -8,7 +8,8 @@ set -u
 PLIST_NAME=com.github.alpaca
 PLIST_PATH=~/Library/LaunchAgents/$PLIST_NAME.plist
 APP_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-BIN_PATH=$APP_PATH/bin/alpaca
+ALPACA_PATH=$APP_PATH/bin/alpaca
+INSTALL_ZSH_PATH=$APP_PATH/bin/install_zsh
 LOG_PATH=~/.alpaca.log
 ICON_BASE64=$(cat $APP_PATH/img/icon.png | base64)
 
@@ -22,7 +23,7 @@ installLaunchAgent() {
     <string>$PLIST_NAME</string>
     <key>ProgramArguments</key>
     <array>
-      <string>$BIN_PATH</string>
+      <string>$ALPACA_PATH</string>
     </array>
     <key>StandardOutPath</key>
     <string>$LOG_PATH</string>
@@ -60,6 +61,9 @@ else
   echo "---"
   echo "Start | terminal=false bash=/bin/launchctl args=start__$PLIST_NAME"
 fi
+
+echo "---"
+echo "Install .zshrc | bash=$INSTALL_ZSH_PATH"
 
 # Log tail
 

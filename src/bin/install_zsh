@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+set +x
+set +e
+
+addLine(){
+    FILE=$1
+    LINE=$2
+    touch $FILE && grep -q -- "$LINE" $FILE || echo "$LINE" >> $FILE
+}
+
+# Append Configuration
+
+addLine ~/.zshrc "https_proxy=localhost:3128"
+addLine ~/.zshrc "http_proxy=localhost:3128"
+addLine ~/.zshrc "export http_proxy https_proxy"
