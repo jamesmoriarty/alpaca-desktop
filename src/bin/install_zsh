@@ -3,6 +3,8 @@
 set +x
 set +e
 
+# "Safely" Append Line Function
+
 addLine(){
     FILE=$1
     LINE=$2

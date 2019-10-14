@@ -47,7 +47,7 @@ isRunning() {
   fi
 }
 
-# Daemon control
+# Daemon controls
 
 if isRunning $PLIST_NAME; then
   echo " ● | color=green templateImage=$ICON_BASE64"
@@ -61,6 +61,8 @@ else
   echo "---"
   echo "Start | terminal=false bash=/bin/launchctl args=start__$PLIST_NAME"
 fi
+
+# Instrument shells
 
 echo "---"
 echo "Install .zshrc | bash=$INSTALL_ZSH_PATH"
