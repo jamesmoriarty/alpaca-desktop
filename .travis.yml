@@ -1,0 +1,10 @@
+os: osx
+osx_image: xcode10.3
+
+stages:
+  - Build
+
+jobs:
+  include:
+    - stage: Build
+      script: ./bin/build

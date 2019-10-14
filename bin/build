@@ -7,13 +7,23 @@ set -u
 mkdir -p dist
 
 rm -r -f \
-    dist/*
+  dist/*
 
-cp -r \
-    src/BitBarDistro.app \
-    dist/Alpaca.app
+curl \
+  --verbose \
+  --location \
+  --output /tmp/BitBarDistro-v1.9.2.zip \
+  https://github.com/matryer/bitbar/releases/download/v1.9.2/BitBarDistro-v1.9.2.zip
+
+unzip \
+  /tmp/BitBarDistro-v1.9.2.zip \
+  -d dist/
+
+mv \
+  dist/BitBarDistro.app \
+  dist/Alpaca.app
 
 bin/bitbar-bundler \
-    dist/Alpaca.app \
-    src/lib \
-    src/alpaca.3s.sh
+  dist/Alpaca.app \
+  src/lib \
+  src/alpaca.3s.sh

@@ -1,5 +1,7 @@
 # Alpaca Desktop
 
+[![Build Status](https://travis-ci.org/jamesmoriarty/alpaca-desktop.svg?branch=master)](https://travis-ci.org/jamesmoriarty/alpaca-desktop)
+
 OSX menu bar widget for [Alpaca][2]. Built with [BitBar][1] distribution and includes [Alpaca][2] and [launchd][3] daemon.
 
 ![Screenshot](docs/screenshot.jpg)

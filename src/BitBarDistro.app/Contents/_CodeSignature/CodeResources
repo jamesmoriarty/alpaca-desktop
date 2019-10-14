@@ -379,28 +379,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Q5+Eb5WByyDTWte3FmvlzAacz6s=
+			xo/waBLb0QwNey6VBOC1B/x2Lys=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"742b04f2ec810ede479c63eb7984ee2971b45328" or cdhash H"439f846f9581cb20d35ad7b7166be5cc069ccfab"</string>
-		</dict>
-		<key>MacOS/alpaca.3s.sh</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			3JXG1c1TnKvustQNzUM7woq7XiM=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"b06768ba1dedf95d17a991bdc81feb0fddb3d589" or cdhash H"dc95c6d5cd539cabeeb2d40dcd433bc28abb5e23"</string>
-		</dict>
-		<key>MacOS/lib/alpaca</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			tJiz6WDQHJrK1K9pNYLf3OaCKQc=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"b498b3e960d01c9acad4af693582dfdce6822907"</string>
+			<string>anchor apple generic and identifier "org.sparkle-project.Sparkle" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = B3T8QSC4HG)</string>
 		</dict>
 		<key>Resources/App.nib</key>
 		<dict>
@@ -963,11 +945,6 @@
 			<key>weight</key>
 			<real>1100</real>
 		</dict>
-		<key>^Resources/Base\.lproj/</key>
-		<dict>
-			<key>weight</key>
-			<real>1010</real>
-		</dict>
 		<key>^version.plist$</key>
 		<true/>
 	</dict>
@@ -1026,11 +1003,6 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
-		</dict>
-		<key>^Resources/Base\.lproj/</key>
-		<dict>
-			<key>weight</key>
-			<real>1010</real>
 		</dict>
 		<key>^[^/]+$</key>
 		<dict>
