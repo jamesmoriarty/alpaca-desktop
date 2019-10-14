@@ -29,5 +29,5 @@ cp \
 
 bin/bitbar-bundler \
   dist/Alpaca.app \
-  src/lib \
+  src/bin \
   src/alpaca.3s.sh
