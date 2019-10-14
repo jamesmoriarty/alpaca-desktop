@@ -9,7 +9,7 @@ PLIST_NAME=com.github.alpaca
 PLIST_PATH=~/Library/LaunchAgents/$PLIST_NAME.plist
 APP_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 ALPACA_PATH=$APP_PATH/bin/alpaca
-INSTALL_ZSH_PATH=$APP_PATH/bin/install_zsh
+INSTALL_ZSH_PATH=$APP_PATH/bin/install/zsh
 LOG_PATH=~/.alpaca.log
 ICON_BASE64=$(cat $APP_PATH/img/icon.png | base64)
 
