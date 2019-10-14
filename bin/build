@@ -24,8 +24,15 @@ mv \
   dist/Alpaca.app
 
 cp \
-  src/icons/AppIcon.icns \
+  src/img/AppIcon.icns \
   dist/Alpaca.app/Contents/Resources/AppIcon.icns
+
+mkdir -p \
+  dist/Alpaca.app/Contents/MacOS/img
+
+cp \
+  src/img/icon.png \
+  dist/Alpaca.app/Contents/MacOS/img/icon.png
 
 bin/bitbar-bundler \
   dist/Alpaca.app \
