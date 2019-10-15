@@ -52,24 +52,26 @@ isRunning() {
 if isRunning $PLIST_NAME; then
   echo " ● | color=green templateImage=$ICON_BASE64"
   echo "---"
-  echo "Running | bash=\"launchctl list $PLIST_NAME\""
+  echo "Running"
   echo "Stop | terminal=false bash=/bin/launchctl args=stop__$PLIST_NAME"
 else
   installLaunchAgent
 
   echo " ● | color=red templateImage=$ICON_BASE64"
   echo "---"
+  echo "Stopped"
   echo "Start | terminal=false bash=/bin/launchctl args=start__$PLIST_NAME"
+fi
+
+# Log tail
+
+if test -f $LOG_PATH; then
+  echo "Logs | terminal=false bash=/usr/bin/open args=$LOG_PATH"
+  echo "---"
+  tail -n 3 $LOG_PATH
 fi
 
 # Instrument shells
 
 echo "---"
 echo "Install .zshrc | bash=$INSTALL_ZSH_PATH"
-
-# Log tail
-
-if test -f $LOG_PATH; then
-  echo "---"
-  tail -n 3 $LOG_PATH
-fi

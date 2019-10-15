@@ -13,6 +13,4 @@ addLine(){
 
 # Append Configuration
 
-addLine ~/.zshrc "https_proxy=localhost:3128"
-addLine ~/.zshrc "http_proxy=localhost:3128"
-addLine ~/.zshrc "export http_proxy https_proxy"
+addLine ~/.zshrc "export {https,http}_proxy=localhost:3128"
