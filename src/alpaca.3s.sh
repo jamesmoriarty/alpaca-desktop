@@ -5,16 +5,14 @@ set -u
 
 # Configuration
 
-PLIST_NAME=com.github.alpaca
-PLIST_PATH=~/Library/LaunchAgents/$PLIST_NAME.plist
 APP_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 ALPACA_PATH=$APP_PATH/bin/alpaca
 INSTALL_ZSH_PATH=$APP_PATH/bin/install/zsh
 LOG_PATH=~/.alpaca.log
 ICON_BASE64=$(cat $APP_PATH/img/icon.png | base64)
-
-installLaunchAgent() {
-  cat <<-EOF >$PLIST_PATH
+PLIST_NAME=com.github.alpaca
+PLIST_PATH=~/Library/LaunchAgents/$PLIST_NAME.plist
+PLIST_XML=$(cat <<'EOF'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -32,7 +30,10 @@ installLaunchAgent() {
   </dict>
 </plist>
 EOF
+)
 
+installLaunchAgent() {
+  echo "$PLIST_XML" > $PLIST_PATH
   launchctl unload $PLIST_PATH
   launchctl load $PLIST_PATH
 }
@@ -50,16 +51,16 @@ isRunning() {
 # Daemon controls
 
 if isRunning $PLIST_NAME; then
-  echo " ● | color=green templateImage=$ICON_BASE64"
+  echo "● | color=green templateImage=$ICON_BASE64"
   echo "---"
-  echo "Running"
+  echo "Alpaca is running"
   echo "Stop | terminal=false bash=/bin/launchctl args=stop__$PLIST_NAME"
 else
   installLaunchAgent
 
-  echo " ● | color=red templateImage=$ICON_BASE64"
+  echo "● | color=red templateImage=$ICON_BASE64"
   echo "---"
-  echo "Stopped"
+  echo "Aplaca is stopped"
   echo "Start | terminal=false bash=/bin/launchctl args=start__$PLIST_NAME"
 fi
 
