@@ -1,0 +1,60 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+
+def write_plist(plist_path, data)
+  File.write plist_path, data
+end
+
+def unload_plist(plist_path)
+  `launchctl unload #{plist_path}`
+end
+
+def load_plist(plist_path)
+  `launchctl load #{plist_path}`
+end
+
+def plist_content(plist_name, alpaca_path, log_path)
+  return <<~XML
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+      <dict>
+        <key>Label</key>
+        <string>#{plist_name}</string>
+        <key>ProgramArguments</key>
+        <array>
+          <string>#{alpaca_path}</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>StandardOutPath</key>
+        <string>#{log_path}</string>
+        <key>StandardErrorPath</key>
+        <string>#{log_path}</string>
+      </dict>
+    </plist>
+  XML
+end
+
+def safe_append(file_path, data)
+  FileUtils.touch file_path
+
+  if IO.readlines(file_path).grep(/#{data}/).empty?
+    open file_path, 'a' do |file|
+      file.puts data
+    end
+  end
+end
+
+plist_name, plist_path, alpaca_path, log_path = ARGV
+
+write_plist  plist_path, plist_content(plist_name, alpaca_path, log_path)
+unload_plist plist_path
+load_plist   plist_path
+
+http_proxy="export {https,http}_proxy=localhost:3128"
+
+safe_append File.join(Dir.home, ".zshrc"), http_proxy
+safe_append File.join(Dir.home, ".bashrc"), http_proxy
+
