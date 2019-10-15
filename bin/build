@@ -9,11 +9,15 @@ mkdir -p dist
 rm -r -f \
   dist/*
 
-curl \
-  --verbose \
-  --location \
-  --output /tmp/BitBarDistro-v1.9.2.zip \
-  https://github.com/matryer/bitbar/releases/download/v1.9.2/BitBarDistro-v1.9.2.zip
+if test -f /tmp/BitBarDistro-v1.9.2.zip; then
+  echo "/tmp/BitBarDistro-v1.9.2.zip Exists"
+else
+  curl \
+    --verbose \
+    --location \
+    --output /tmp/BitBarDistro-v1.9.2.zip \
+    https://github.com/matryer/bitbar/releases/download/v1.9.2/BitBarDistro-v1.9.2.zip
+fi
 
 unzip \
   /tmp/BitBarDistro-v1.9.2.zip \
