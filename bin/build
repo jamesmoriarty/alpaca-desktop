@@ -41,4 +41,4 @@ cp \
 bin/bitbar-bundler \
   dist/Alpaca.app \
   src/bin \
-  src/alpaca.3s.sh
+  src/alpaca.3s.rb
