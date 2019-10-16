@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+plist_name, plist_path, alpaca_path, log_path = ARGV
+
+`/bin/launchctl stop #{plist_name}`
+`/bin/launchctl unload #{plist_name}`
+
+`rm #{plist_path}`
+`rm #{log_path}`
+
+http_proxy="export {https,http}_proxy=localhost:3128"
+
+[".zshrc", ".bashrc"].each do |file_name|
+  file_path = File.join(Dir.home, file_name)
+
+  `sed -i.$(date +%s).bak "/#{http_proxy}/d" #{file_path}`
+end
+
