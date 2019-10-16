@@ -26,7 +26,7 @@ Build artifact can be found at `dist/Alpaca.app`.
 cat src/icons/icon.png | base64
 ```
 
-Tested with `64x64px` `image/png`. Application `icns` generated with [IconGenerator][5].
+Tested with 64x64px `png`. Application `icns` generated with [IconGenerator][5].
 
 [1]: https://github.com/matryer/bitbar
 [2]: https://github.com/samuong/alpaca
