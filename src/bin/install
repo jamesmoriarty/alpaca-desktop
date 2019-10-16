@@ -7,11 +7,11 @@ def write_plist(plist_path, data)
 end
 
 def unload_plist(plist_path)
-  `launchctl unload #{plist_path}`
+  `/bin/launchctl unload #{plist_path}`
 end
 
 def load_plist(plist_path)
-  `launchctl load #{plist_path}`
+  `/bin/launchctl load #{plist_path}`
 end
 
 def plist_content(plist_name, alpaca_path, log_path)

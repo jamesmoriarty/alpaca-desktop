@@ -42,3 +42,6 @@ bin/bitbar-bundler \
   dist/Alpaca.app \
   src/bin \
   src/alpaca.3s.rb
+
+touch \
+  dist/Alpaca.app
