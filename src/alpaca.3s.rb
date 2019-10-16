@@ -20,17 +20,17 @@ end
 # Daemon controls
 
 if running? PLIST_NAME
-  puts "● | color=green templateImage=#{ICON_BASE64}"
+  puts "| templateImage=#{ICON_BASE64}"
   puts "---"
   puts "Daemon is running"
   puts "Stop | terminal=false bash=/bin/launchctl args=stop__#{PLIST_NAME}"
 elsif File.exists? PLIST_PATH
-  puts "● | color=yellow templateImage=#{ICON_BASE64}"
+  puts "⚠️ | templateImage=#{ICON_BASE64}"
   puts "---"
   puts "Daemon is stopped"
   puts "Start | terminal=false bash=/bin/launchctl args=start__#{PLIST_NAME}"
 else
-  puts "● | color=red templateImage=#{ICON_BASE64}"
+  puts "⚠️ | templateImage=#{ICON_BASE64}"
   puts "---"
   puts "Install | terminal=false bash=#{INSTALL_PATH} args=#{PLIST_NAME}__#{PLIST_PATH}__#{ALPACA_PATH}__#{LOG_PATH}"
 end
