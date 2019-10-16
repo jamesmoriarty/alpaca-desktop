@@ -45,3 +45,7 @@ bin/bitbar-bundler \
 
 touch \
   dist/Alpaca.app
+
+pushd dist/
+zip -r --symlinks Alpaca.zip Alpaca.app
+popd
