@@ -31,7 +31,7 @@ elsif File.exists? PLIST_PATH
 else
   puts "● | color=red templateImage=#{ICON_BASE64}"
   puts "---"
-  puts "Install | terminal=false bash=#{INSTALL_PATH} args=#{PLIST_NAME}__#{PLIST_PATH}__#{ALPACA_PATH}__#{LOG_PATH}"
+  puts "Install Daemon | terminal=false bash=#{INSTALL_PATH} args=#{PLIST_NAME}__#{PLIST_PATH}__#{ALPACA_PATH}__#{LOG_PATH}"
 end
 
   # Log tail
