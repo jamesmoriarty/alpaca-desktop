@@ -35,7 +35,7 @@ else
   puts "Install | terminal=false bash=#{INSTALL_PATH} args=#{PLIST_NAME}__#{PLIST_PATH}__#{ALPACA_PATH}__#{LOG_PATH}"
 end
 
-  # Log tail
+# Log tail
 
 if File.exists? LOG_PATH
   puts "Logs | terminal=false bash=/usr/bin/open args=#{LOG_PATH}"
