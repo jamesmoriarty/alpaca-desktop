@@ -27,6 +27,16 @@ mv \
   dist/BitBarDistro.app \
   dist/Alpaca.app
 
+if test -f src/bin/alpaca; then
+  echo "src/bin/alpaca Exists"
+else
+  curl \
+    --verbose \
+    --location \
+    --output src/bin/alpaca \
+    https://github.com/samuong/alpaca/releases/download/v1.0.0/darwin-amd64
+fi
+
 cp \
   src/img/AppIcon.icns \
   dist/Alpaca.app/Contents/Resources/AppIcon.icns
@@ -37,6 +47,8 @@ mkdir -p \
 cp \
   src/img/icon.png \
   dist/Alpaca.app/Contents/MacOS/img/icon.png
+
+chmod +x src/bin/*
 
 bin/bitbar-bundler \
   dist/Alpaca.app \
