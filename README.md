@@ -11,7 +11,11 @@ Experimental OSX menu bar widget for [Alpaca][2]. Built with [BitBar][1] distrib
 ```
 Alpaca.app
 ```
-Releases can be downloaded from [here][4].
+Releases can be downloaded from [here][4]. * **
+
+\* macOS Mojave and below - can be run as untrusted.
+
+\** macOS Catalina - will need to be built locally.
 
 ## Build
 
