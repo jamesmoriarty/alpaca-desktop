@@ -13,6 +13,8 @@ Alpaca.app
 ```
 Releases can be downloaded from [here][4]. \[1] \[2]
 
+<hr />
+
 \[1] macOS Mojave and below - can be run as untrusted.
 
 \[2] macOS Catalina - will need to be built locally.
@@ -30,7 +32,9 @@ Build artifact can be found at `dist/Alpaca.app`.
 cat src/icons/icon.png | base64
 ```
 
-Tested with 64x64px `png`. Application `icns` generated with [IconGenerator][5].
+The image data must be passed as base64.
+
+Application `icns` generated with [IconGenerator][5].
 
 [1]: https://github.com/matryer/bitbar
 [2]: https://github.com/samuong/alpaca
