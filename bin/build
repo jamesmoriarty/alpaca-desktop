@@ -34,7 +34,7 @@ else
     --verbose \
     --location \
     --output src/bin/alpaca \
-    https://github.com/samuong/alpaca/releases/download/v1.0.0/darwin-amd64
+    https://github.com/samuong/alpaca/releases/download/v1.1.0/darwin-amd64
 fi
 
 cp \
