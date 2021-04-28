@@ -17,7 +17,7 @@ Releases can be downloaded from [here][4]. \[1] \[2]
 
 \[1] macOS Mojave and below - can be run as untrusted.
 
-\[2] macOS Catalina - will need to be built locally.
+\[2] macOS Catalina and above - will need to be built locally.
 
 ## Build
 
@@ -27,12 +27,6 @@ bin/build
 Build artifact can be found at `dist/Alpaca.app`.
 
 ## Icon
-
-```
-cat src/icons/icon.png | base64
-```
-
-The image data must be passed as base64.
 
 Application `icns` generated with [IconGenerator][5].
 
