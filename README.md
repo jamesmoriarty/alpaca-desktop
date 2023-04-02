@@ -1,6 +1,6 @@
 # Alpaca Desktop
 
-[![Latest Tag](https://img.shields.io/github/v/tag/jamesmoriarty/alpaca-desktop.svg?logo=github&label=latest)](https://github.com/jamesmoriarty/alpaca-desktop/releases) [![Build Status](https://travis-ci.org/jamesmoriarty/alpaca-desktop.svg?branch=master)](https://travis-ci.org/jamesmoriarty/alpaca-desktop) ![GitHub Releases](https://img.shields.io/github/downloads/jamesmoriarty/alpaca-desktop/total)
+[![Latest Tag](https://img.shields.io/github/v/tag/jamesmoriarty/alpaca-desktop.svg?logo=github&label=latest)](https://github.com/jamesmoriarty/alpaca-desktop/releases) [![Continuous Integration](https://github.com/jamesmoriarty/alpaca-desktop/actions/workflows/ci.yml/badge.svg)](https://github.com/jamesmoriarty/alpaca-desktop/actions/workflows/ci.yml) ![GitHub Releases](https://img.shields.io/github/downloads/jamesmoriarty/alpaca-desktop/total)
 
 Experimental OSX menu bar widget for [Alpaca][2]. Distributed as a [BitBar][1] application with [Alpaca][2] binary and [Launchd][3] daemon.
 
